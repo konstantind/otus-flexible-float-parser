@@ -1,14 +1,18 @@
-## Что делает
+## What It Does
 
-Превращает строки типа `'0,5'`, `'0.5'`, `'.5'`, `',5'` в корректный `(float) 0.5`   
+Flexible Float Parser is a lightweight PHP package that converts numeric strings with either a comma or a dot as a decimal separator into a float. It supports negative numbers and values without a leading zero (e.g., .5 → 0.5).   
 
-## Установка
+## Installation
 
-`composer require konstantind/otus-flexible-float-parser`
+```sh
+composer require konstantind/otus-flexible-float-parser
+```
 
-## Использование
+## Use
 
 ```
+<?php
+
 $floatValue = FlexibleFloatParser::parse('3,14'); // 3.14
 $floatValue = FlexibleFloatParser::parse('.5');   // 0.5
 $floatValue = FlexibleFloatParser::parse('');     // null
