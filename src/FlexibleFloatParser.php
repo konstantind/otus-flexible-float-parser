@@ -1,8 +1,11 @@
 <?php declare(strict_types=1);
 
+namespace Konstantind\OtusFlexibleFloatParser;
+
 class FlexibleFloatParser
 {
-    public static function parse(string $value): ?float {
+    public static function parse(string $value): ?float
+    {
         $normalizedValue = str_replace(',', '.', trim($value));
 
         if ($normalizedValue === '') {
@@ -10,7 +13,7 @@ class FlexibleFloatParser
         }
 
         if (preg_match('/^-?\d*(\.\d+)?$/', $normalizedValue)) {
-            return (float) (preg_match('/^\./', $normalizedValue) ? '0' . $normalizedValue : $normalizedValue);
+            return (float)(preg_match('/^\./', $normalizedValue) ? '0' . $normalizedValue : $normalizedValue);
         }
 
         return null;
